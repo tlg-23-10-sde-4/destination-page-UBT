@@ -19,6 +19,16 @@ user_input_form.addEventListener("submit", (e) => {
 
 });
 
+// when edit or delete
+cards_container.addEventListener("click", (e) => {
+    const clickedElt = e.target
+
+    if (clickedElt.getAttribute(btn_type) ==="delete") {
+        clickedElt.parentElement.parentElement
+    }
+
+})
+
 function createCard({destinationName, locationName, photoUrl, descr}) {
 
     const card = document.createElement("div");
@@ -31,8 +41,8 @@ function createCard({destinationName, locationName, photoUrl, descr}) {
         <h5 class="card-title">${destinationName}</h5>
         <p class="card-text">${locationName}</p>
         ${descr && ` <p class="card-text">${descr}</p>`}
-        <button type="button class="btn "btn-info">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" btn_type="edit" class="btn "btn-info">Edit</button>
+        <button type="button" btn_type="delete" class="btn btn-danger">Delete</button>
 
     </div> `;
 
