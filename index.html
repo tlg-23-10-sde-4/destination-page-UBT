@@ -11,7 +11,8 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <!--Custum CSS-->
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" async defer></script>
   </head>
   <body>
     <header class="container">
@@ -26,6 +27,7 @@
         <form action="user_input_form">
           <label for="destination_name">Destination_name</label>
           <input
+            required
             type="text"
             placeholder="Enter destination name"
             id="destination_name"
@@ -33,6 +35,7 @@
 
           <label for="Location_name">Location</label>
           <input
+            required
             type="text"
             placeholder="Enter location name"
             id="Location_name"
