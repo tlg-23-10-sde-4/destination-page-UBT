@@ -27,7 +27,7 @@ function createCard({destinationName, locationName, photoUrl, descr}) {
     card.classList.add("card");
     card.setAttribute("styles", "width; 18rem;");
 
-   /* card.innerHTML = ' 
+    card.innerHTML = `
     <img scr = ${photoUrl} class ="card-img-top" alt=${destinationName} at ${locationName}>
     <div class="card-body">
         <h5 class="card-title">${destinationName}</h5>
@@ -37,7 +37,7 @@ function createCard({destinationName, locationName, photoUrl, descr}) {
         <button type="button class="btn "btn-info">Edit</button>
         <button type="button" class="btn btn-danger">Delete</button>
 
-    </div> '*/
+    </div> `
 
 
     return card
