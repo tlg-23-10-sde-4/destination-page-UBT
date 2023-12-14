@@ -21,8 +21,6 @@ user_input_form.addEventListener("submit", (e) => {
 
 function createCard({destinationName, locationName, photoUrl, descr}) {
 
-
-
     const card = document.createElement("div");
     card.classList.add("card");
     card.setAttribute("styles", "width; 18rem;");
@@ -32,12 +30,11 @@ function createCard({destinationName, locationName, photoUrl, descr}) {
     <div class="card-body">
         <h5 class="card-title">${destinationName}</h5>
         <p class="card-text">${locationName}</p>
-
-        ${descr && ' <p class="card-text">${descr}</p>'}
+        ${descr && ` <p class="card-text">${descr}</p>`}
         <button type="button class="btn "btn-info">Edit</button>
         <button type="button" class="btn btn-danger">Delete</button>
 
-    </div> `
+    </div> `;
 
 
     return card
