@@ -19,24 +19,59 @@ user_input_form.addEventListener("submit", (e) => {
 
 });
 
+// when edit or delete
+cards_container.addEventListener("click", (e) => {
+    const clickedElt = e.target
+
+    if (clickedElt.getAttribute(btn_type) ==="delete") {
+        clickedElt.parentElement.parentElement.remove();
+    } else IF (clickedElt.getAttribute("btn_type")=== "edit")
+    handleEdit(clickedElt)
+
+})
+
 function createCard({destinationName, locationName, photoUrl, descr}) {
+
+
+
 
     const card = document.createElement("div");
     card.classList.add("card");
     card.setAttribute("styles", "width; 18rem;");
 
     card.innerHTML = `
-    <img scr = ${photoUrl} class ="card-img-top" alt=${destinationName} at ${locationName}>
+    <img scr=${photoUrl} class ="card-img-top" alt=${destinationName} at ${locationName}>
     <div class="card-body">
         <h5 class="card-title">${destinationName}</h5>
         <p class="card-text">${locationName}</p>
         ${descr && ` <p class="card-text">${descr}</p>`}
-        <button type="button class="btn "btn-info">Edit</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" btn_type="edit" class="btn "btn-info">Edit</button>
+        <button type="button" btn_type="delete" class="btn btn-danger">Delete</button>
 
     </div> `;
 
 
     return card
+}    
+function handleEdit(editBtn){
+    const cardbody = editBtn.parentElement
+    const oldDestName = cardbody.children[0].textContent; 
+    const oldLocName = cardbody.children[1].textContent;  
+    const oldPhotUrl =cardbody.previousSiblingElement.getAttribute("src");
 
+
+    const oldDesc = cardbody.children[2].tagName === "p" ? cardbody.children[2].textContent : "";
+
+    
+    const newDestName = prompt("Enter new destination name, oldDestName ")
+    const newLocName = prompt("Enter new destination name, oldLocName  ")
+    const newPhotoUrl = prompt("Enter new destination name, oldPhotoUrl ")
+    const newDesc = prompt("Enter new destination name, oldDesc ")
+
+    if (newDestName && newDestName ! == oldDestName){
+        cardbody.children[0]. textContent = newDestName
+    }
 }
+
+
+
