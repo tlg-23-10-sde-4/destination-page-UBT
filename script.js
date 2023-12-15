@@ -24,9 +24,14 @@ cards_container.addEventListener("click", (e) => {
     const clickedElt = e.target
 
     if (clickedElt.getAttribute(btn_type) ==="delete") {
+//<<<<<<< UBT-card-edit
         clickedElt.parentElement.parentElement.remove();
     } else IF (clickedElt.getAttribute("btn_type")=== "edit")
     handleEdit(clickedElt)
+=======
+        clickedElt.parentElement.parentElement
+    }
+//>>>>>>> main
 
 })
 
